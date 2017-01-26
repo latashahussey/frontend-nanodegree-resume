@@ -1,98 +1,129 @@
+var work = {
+    "jobs": [
+        {
+            "employer": "Lone Star College-University Park",
+            "title": "Adjunct Faculty",
+            "location": "Houston, TX",
+            "dates": "August 2014-Present",
+            "description": "De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium."
+        },
+        {
+            "employer": "Lone Star College-Online",
+            "title": "Instructional Technologist II",
+            "location": "Houston, TX",
+            "dates": "November 2013-Present",
+            "description": "Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium."
+        },
+        {
+            "employer": "Central Texas College",
+            "title": "Junior Systems Engineer",
+            "location": "Killeen, TX",
+            "dates": "May 2011-June 2013",
+            "description": "Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror"
+        }
+    ]
+};
 
+var projects = {
+    "projects": [
+        {
+            "title": "Jane Doette Portfolio",
+            "dates": "2017",
+            "descripton": "Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium.",
+            "images" = [
+                "images/project1.jpg"
+            ]
+        },
+        {
+            "title": "Animal Trading Cards",
+            "dates": "2017",
+            "descripton": "Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium.",
+            "images" = [
+                "images/project2.jpg"
+            ]
+        },
+        {
+            "title": "Animal Trading Cards",
+            "dates": "2017",
+            "descripton": "Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium.",
+            "images" = [
+                "images/project3.jpg"
+            ]
+        }
+    ]
+};
 
-/* Bio */
 var bio = {
     "name": "LaTasha Hussey",
     "role": "Front-End Web Developer",
-    "contacts": {
-        "mobile": "713-487-7391",
-        "email": "latasha.hussey@gmail.com",
-        "github":"latashahussey",
-        "twitter":"@latashahussey",
-        "location":"Austin"
-    },
-    "welcomeMessage": "Hello",
+    "welcomeMessage": "Hi, I am a web developer.",
+    "biopic": "images/tasha-tilt.jpg",
+    "contacts":
+        {
+            "mobile": "713-487-7391",
+            "email": "latasha.hussey@gmail.com",
+            "github": "latashahussey",
+            "twitter": "@latashahussey",
+            "location": "Austin, TX"
+        },
     "skills": [
-        "HTML5", "CSS3", "JavaScript", "jQuery", "Git", "Gulp", "WordPress"
-    ],
-    "bioPic": "images/tasha-tilt.jpg"
+        "HTML5",
+        "CSS3",
+        "WordPress",
+        "Javascript",
+        "jQuery",
+        "Git",
+        "Grunt",
+        "Gulp"
+    ]
 };
 
-/* Work */
-var work = {};
+var education = {
+    "schools": [
+        {
+            "name": "Texas A&M University-Central Texas" ,
+            "location": "Killeen, TX",
+            "degree": "MS",
+            "dates": "2008-2010",
+            "url": "http://www.tamuct.edu ",
+            "major": [
+                "Information Systems"
+            ]
+        },
+        {
+            "name":"Tarleton State University-Central Texas" ,
+            "location": "Killeen, TX" ,
+            "degree": "BS" ,
+            "dates": "2001-2004",
+            "url": "http://www.tarletone.edu",
+            "major": [
+                "Liberal Arts"
+            ]
+        },
+        {
+            "name": "Central Texas College",
+            "location": "Killeen, TX",
+            "degree": "AAS",
+            "dates": "1999-2001",
+            "url": "http://www.ctcd.edu",
+            "major": [
+                "Office Administration"
+            ]
+        }
 
-work.position = "Instructional Technologist II";
-work.employer = "Lone Star College-Online";
-work.years = "2013-Present";
-work.city = "Houston, TX";
-
-/* Education */
-var education = {};
-
-education.name = "Tarleton State University-Central Texas";
-education.years = "2008-2010";
-education.city = "Killeen, TX";
-
-var education = [
-  {
-	"name":"Udacity",
-    "location": "Online",
-    "major":"Front-End Developer Nanodegree",
-    "graduation": 2017
-},
-  {
-	"name":"Skillcrush",
-    "location": "Online",
-    "major":"WordPress Developer Blueprint",
-    "graduation": 2016
-},
-  {
-	"name":"Tarleton State University-Central Texas",
-    "location": "Killeen, TX",
-    "major":"Masters of Science in Information Systems",
-    "graduation": 2010
-},
-  {
-	"name":"Tarleton State University-Central Texas",
-    "location": "Killeen, TX",
-    "major":"Bachelor of Science in Liberal Arts",
-    "graduation": 2004
-},
-  {
-	"name":"Central Texas College",
-    "location": "Killeen, TX",
-    "major":"Associate of Applied Sciences in Office Administration",
-    "graduation": 2001
-}];
-
-/* Replace header and role */
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-var formattedSkills = HTMLskills.replace("%data%", bio.skills);
-var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.position);
-var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.employer);
-var formattedWorkDates = HTMLworkDates.replace("%data%", work.years);
-var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.city);
-var formattedSchoolName = HTMLschoolName.replace("%data%", education.name);
-var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.years);
-var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.city);
-
-/* Add bio to header */
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-$("#header").prepend(formattedBioPic);
-$("#header").append(formattedMobile);
-$("#header").append(formattedEmail);
-$("#header").append(formattedSkills);
-$("#header").append(formattedWelcomeMsg);
-$("#workExperience").append(formattedWorkEmployer);
-$("#workExperience").append(formattedWorkTitle);
-$("#workExperience").append(formattedWorkDates);
-$("#workExperience").append(formattedWorkLocation);
-$("#education").append(formattedSchoolName);
-$("#education").append(formattedSchoolDates);
-$("#education").append(formattedSchoolLocation);
+    ],
+    "onlineCourses": [
+        {
+            "title": "Front-End Developer Nanodegree" ,
+            "school": "Udacity",
+            "dates": "2017",
+            "url": "http://www.udacity.com"
+        },
+        {
+            "title":  "WordPress Developer Blueprint",
+            "school": "Skillcrush",
+            "dates": "August 2016-September 2017",
+            "url": "http://www.skillcrush.com"
+        }
+    ]
+};
