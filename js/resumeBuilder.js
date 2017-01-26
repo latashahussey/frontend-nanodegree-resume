@@ -30,7 +30,7 @@ var projects = {
             "title": "Jane Doette Portfolio",
             "dates": "2017",
             "descripton": "Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium.",
-            "images" = [
+            "images": [
                 "images/project1.jpg"
             ]
         },
@@ -38,7 +38,7 @@ var projects = {
             "title": "Animal Trading Cards",
             "dates": "2017",
             "descripton": "Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium.",
-            "images" = [
+            "images": [
                 "images/project2.jpg"
             ]
         },
@@ -46,7 +46,7 @@ var projects = {
             "title": "Animal Trading Cards",
             "dates": "2017",
             "descripton": "Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium.",
-            "images" = [
+            "images": [
                 "images/project3.jpg"
             ]
         }
@@ -127,3 +127,19 @@ var education = {
         }
     ]
 };
+
+
+
+/* Check to see if skills exist, then add to header */
+
+if(bio.skills.length > 0){
+    //Add Skills section header
+    $("#header").append(HTMLskillsStart);
+
+    //Grab all skills and display them
+    for (var formattedHTMLskill, i = 0; i < bio.skills.length; i++) {
+        formattedHTMLskill = HTMLskills.replace("%data%", bio.skills[i]);
+        $("#skills").append(formattedHTMLskill);
+    }
+
+}
