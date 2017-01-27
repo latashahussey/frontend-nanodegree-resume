@@ -54,7 +54,7 @@ var projects = {
 var bio = {
     "name": "LaTasha Hussey",
     "role": "Front-End Web Developer",
-    "welcomeMessage": "Hi, I am a web developer.",
+    "welcomeMessage": "Hi, I am a front-end web developer.",
     "biopic": "images/tasha-tilt.jpg",
     "contacts": {
         "mobile": "713-487-7391",
@@ -127,14 +127,20 @@ var education = {
 
 /* Check to see if data exist, then add to page*/
 
-
-
-
 /* -- HEADER -- */
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 
-
-
-
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+$("#header").prepend(formattedBioPic);
+$("#header").append(formattedMobile);
+$("#header").append(formattedEmail);
+$("#header").append(formattedWelcomeMsg);
 
 /*Skills*/
 if (bio.skills.length > 0) {
