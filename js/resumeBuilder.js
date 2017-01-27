@@ -123,8 +123,6 @@ var education = {
     ]
 };
 
-
-
 /* Check to see if data exist, then add to page*/
 
 /* -- HEADER -- */
@@ -150,9 +148,9 @@ if (bio.skills.length > 0) {
     //Grab all skills and display them
     for (skill in bio.skills) {
         formattedHTMLskill = HTMLskills.replace("%data%", bio.skills[skill]);
+
         $("#skills").append(formattedHTMLskill);
     }
-
 }
 
 /* -- WORK EXPERIENCE -- */
@@ -160,15 +158,22 @@ if (work.jobs.length > 0) {
     //Add Work Experience
     $("#workExperience").append(HTMLworkStart);
 
-    var formattedHTMLworkEmployer;
-    var formattedHTMLworkTitle;
-
     //Grab all jobs and display them
 
-    for (i = 0; i < work.jobs.length; i++) {
-        formattedHTMLworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
-        formattedHTMLworkTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
-        $(".work-entry:last").append(formattedHTMLworkEmployer + formattedHTMLworkTitle);
-    }
+    for (job in work.jobs) {
+        var formattedHTMLworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 
+        var formattedHTMLworkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+
+        $(".work-entry:last").append(formattedHTMLworkEmployer + formattedHTMLworkTitle);
+
+        var formattedHTMLworkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+        $(".work-entry:last").append(formattedHTMLworkDates);
+
+        var formattedHTMLworkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].dates);
+        $(".work-entry:last").append(formattedHTMLworkLocation);
+
+        var formattedHTMLworkDescription = HTMLworkLocation.replace("%data%", work.jobs[job].description);
+        $(".work-entry:last").append(formattedHTMLworkDescription);
+    }
 }
