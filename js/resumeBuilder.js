@@ -1,6 +1,5 @@
 var work = {
-    "jobs": [
-        {
+    "jobs": [{
             "employer": "Lone Star College-University Park",
             "title": "Adjunct Faculty",
             "location": "Houston, TX",
@@ -25,8 +24,7 @@ var work = {
 };
 
 var projects = {
-    "projects": [
-        {
+    "projects": [{
             "title": "Jane Doette Portfolio",
             "dates": "2017",
             "descripton": "Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium.",
@@ -58,14 +56,13 @@ var bio = {
     "role": "Front-End Web Developer",
     "welcomeMessage": "Hi, I am a web developer.",
     "biopic": "images/tasha-tilt.jpg",
-    "contacts":
-        {
-            "mobile": "713-487-7391",
-            "email": "latasha.hussey@gmail.com",
-            "github": "latashahussey",
-            "twitter": "@latashahussey",
-            "location": "Austin, TX"
-        },
+    "contacts": {
+        "mobile": "713-487-7391",
+        "email": "latasha.hussey@gmail.com",
+        "github": "latashahussey",
+        "twitter": "@latashahussey",
+        "location": "Austin, TX"
+    },
     "skills": [
         "HTML5",
         "CSS3",
@@ -79,9 +76,8 @@ var bio = {
 };
 
 var education = {
-    "schools": [
-        {
-            "name": "Texas A&M University-Central Texas" ,
+    "schools": [{
+            "name": "Texas A&M University-Central Texas",
             "location": "Killeen, TX",
             "degree": "MS",
             "dates": "2008-2010",
@@ -91,9 +87,9 @@ var education = {
             ]
         },
         {
-            "name":"Tarleton State University-Central Texas" ,
-            "location": "Killeen, TX" ,
-            "degree": "BS" ,
+            "name": "Tarleton State University-Central Texas",
+            "location": "Killeen, TX",
+            "degree": "BS",
             "dates": "2001-2004",
             "url": "http://www.tarletone.edu",
             "major": [
@@ -112,15 +108,14 @@ var education = {
         }
 
     ],
-    "onlineCourses": [
-        {
-            "title": "Front-End Developer Nanodegree" ,
+    "onlineCourses": [{
+            "title": "Front-End Developer Nanodegree",
             "school": "Udacity",
             "dates": "2017",
             "url": "http://www.udacity.com"
         },
         {
-            "title":  "WordPress Developer Blueprint",
+            "title": "WordPress Developer Blueprint",
             "school": "Skillcrush",
             "dates": "August 2016-September 2017",
             "url": "http://www.skillcrush.com"
@@ -130,16 +125,44 @@ var education = {
 
 
 
-/* Check to see if skills exist, then add to header */
+/* Check to see if data exist, then add to page*/
 
-if(bio.skills.length > 0){
+
+
+
+/* -- HEADER -- */
+
+
+
+
+
+/*Skills*/
+if (bio.skills.length > 0) {
     //Add Skills section header
     $("#header").append(HTMLskillsStart);
 
     //Grab all skills and display them
-    for (var formattedHTMLskill, i = 0; i < bio.skills.length; i++) {
-        formattedHTMLskill = HTMLskills.replace("%data%", bio.skills[i]);
+    for (skill in bio.skills) {
+        formattedHTMLskill = HTMLskills.replace("%data%", bio.skills[skill]);
         $("#skills").append(formattedHTMLskill);
+    }
+
+}
+
+/* -- WORK EXPERIENCE -- */
+if (work.jobs.length > 0) {
+    //Add Work Experience
+    $("#workExperience").append(HTMLworkStart);
+
+    var formattedHTMLworkEmployer;
+    var formattedHTMLworkTitle;
+
+    //Grab all jobs and display them
+
+    for (i = 0; i < work.jobs.length; i++) {
+        formattedHTMLworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
+        formattedHTMLworkTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
+        $(".work-entry:last").append(formattedHTMLworkEmployer + formattedHTMLworkTitle);
     }
 
 }
