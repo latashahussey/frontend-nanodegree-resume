@@ -58,7 +58,7 @@ var bio = {
     "name": "LaTasha Hussey",
     "role": "Front-End Web Developer",
     "welcomeMessage": "Hi, I am a front-end web developer.",
-    "biopic": "images/tasha-tilt.jpg",
+    "biopic": "src/images/tasha-tilt.jpg",
     "contacts": {
         "mobile": "713-487-7391",
         "email": "latasha.hussey@gmail.com",
