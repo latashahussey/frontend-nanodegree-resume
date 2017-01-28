@@ -27,25 +27,28 @@ var projects = {
     "projects": [{
             "title": "Jane Doette Portfolio",
             "dates": "2017",
-            "descripton": "Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium.",
+            "descripton":"Hi soulless creaturas, imo monstra adventus vultus comedat cerebella viventium.",
             "images": [
-                "images/project1.jpg"
+              "http://placehold.it/300x200",
+              "http://placehold.it/300x200"
             ]
         },
         {
             "title": "Animal Trading Cards",
             "dates": "2017",
-            "descripton": "Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium.",
+            "descripton":"Creaturas, imo monstra adventus vultus comedat cerebella viventium.",
             "images": [
-                "images/project2.jpg"
+              "http://placehold.it/300x200",
+              "http://placehold.it/300x200"
             ]
         },
         {
-            "title": "Animal Trading Cards",
+            "title": "Online Resume",
             "dates": "2017",
-            "descripton": "Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium.",
+            "descripton": "Imo monstra adventus vultus comedat cerebella viventium.",
             "images": [
-                "images/project3.jpg"
+                "http://placehold.it/300x200",
+                "http://placehold.it/300x200"
             ]
         }
     ]
@@ -183,10 +186,40 @@ if (work.jobs.length > 0) {
         var formattedHTMLworkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
         $(".work-entry:last").append(formattedHTMLworkDates);
 
-        var formattedHTMLworkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].dates);
+        var formattedHTMLworkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
         $(".work-entry:last").append(formattedHTMLworkLocation);
 
-        var formattedHTMLworkDescription = HTMLworkLocation.replace("%data%", work.jobs[job].description);
+        var formattedHTMLworkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
         $(".work-entry:last").append(formattedHTMLworkDescription);
     }
 }
+
+/* -- PROJECTS -- */
+
+//Encapsulate all projects into a function to display
+
+projects.display = function() {
+  for (project in projects.projects) {
+      $("#projects").append(HTMLprojectStart);
+
+      var formattedHTMLprojectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+      $(".project-entry:last").append(formattedHTMLprojectTitle);
+
+      var formattedHTMLprojectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+      $(".project-entry:last").append(formattedHTMLprojectDates);
+
+      var formattedHTMLprojectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].descripton);
+      $(".project-entry:last").append(formattedHTMLprojectDescription);
+
+
+      //Display all images within the array for this project
+      if(projects.projects[project].images.length >0) {
+        for (image in projects.projects[project].images){
+          var formattedHTMLprojectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+          $(".project-entry:last").append(formattedHTMLprojectImage);
+        }
+      }
+    }
+}
+
+projects.display();
