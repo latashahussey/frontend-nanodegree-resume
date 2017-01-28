@@ -223,3 +223,6 @@ projects.display = function() {
 }
 
 projects.display();
+
+/* -- Google Map of Work Locations */
+$("#mapDiv").append(googleMap);
