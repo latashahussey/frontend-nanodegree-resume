@@ -123,6 +123,19 @@ var education = {
     ]
 };
 
+
+/* MAIN */
+$("#main").append(internationalizeButton);
+
+function inName(){
+  finalName = bio.name.split(" ");
+  firstName = finalName[0];
+  lastName = finalName[1].toUpperCase();
+
+  return firstName + " " + lastName;
+}
+
+
 /* Check to see if data exist, then add to page*/
 
 /* -- HEADER -- */
