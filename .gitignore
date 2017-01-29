@@ -1,0 +1,6 @@
+#####################################################
+# Ignore npm & gulp generated directories/files #
+#####################################################
+node_modules
+.npm-debug.log
+tmp

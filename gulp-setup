@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo npm install --save-dev gulp-rename gulp-minify-css gulp-concat gulp-jshint jshint-stylish gulp-responsive-images gulp-watch gulp-uglify gulp-uglifyjs
