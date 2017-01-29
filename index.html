@@ -24,7 +24,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <title>Resume</title>
 
   <!-- Load the page styles. -->
-  <link href="src/css/style.css" rel="stylesheet">
+  <link href="dist/css/main.min.css" rel="stylesheet">
 
 
 
@@ -88,19 +88,20 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   the DOM. jQuery is fast and easy to use, but it doesn't do anything
   you can't accomplish with vanilla (regular) JavaScript.
   -->
-  <script src="src/js/jQuery.js"></script>
+  <script src="dist/js/jQuery.js"></script>
 
   <!-- More on helper.js in the class -->
-  <script src="src/js/helper.js"></script>
+  <!--<script src="src/js/helper.js"></script>-->
 
   <!--
   The next line tells the browser where to download the JavaScript file you'll be
   writing. In resumeBuilder.js, you'll be writing code that builds the resume
   dynamically when this website, index.html, is opened.
   -->
-  <script src="src/js/resumeBuilder.js"></script>
+  <!--<script src="src/js/resumeBuilder.js"></script>-->
 
-
+  <!-- Minified Javascript -->
+  <script src="dist/js/app.min.js"></script>
   <!--
   These scripts are written in JavaScript. You'll be breaking them down as part of
   a quiz. Essentially, the next few lines are checking to see if you have not

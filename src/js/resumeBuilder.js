@@ -58,7 +58,7 @@ var bio = {
     "name": "LaTasha Hussey",
     "role": "Front-End Web Developer",
     "welcomeMessage": "Hi, I am a front-end web developer.",
-    "biopic": "src/images/tasha-tilt.jpg",
+    "biopic": "dist/images/tasha-tilt-small.jpg",
     "contacts": {
         "mobile": "713-487-7391",
         "email": "latasha.hussey@gmail.com",
@@ -94,7 +94,7 @@ var education = {
             "location": "Killeen, TX",
             "degree": "BS",
             "dates": "2001-2004",
-            "url": "http://www.tarletone.edu",
+            "url": "http://www.tarleton.edu",
             "major": [
                 "Liberal Arts"
             ]
