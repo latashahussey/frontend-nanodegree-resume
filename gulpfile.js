@@ -68,6 +68,7 @@ gulp.task('watch', function () {
     // Endless stream mode
      gulp.watch(paths.cssSrc+'**/*.css', ['minifyCSS']);
      gulp.watch(paths.imgSrc+'**/*.*', ['responsiveImages']);
+     gulp.watch(paths.jsSrc+'**/*.js', ['uglifyJS']);
 });
 
 //Run all gulp tasks
