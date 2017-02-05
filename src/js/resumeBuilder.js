@@ -29,8 +29,9 @@ var projects = {
             "dates": "2017",
             "descripton":"Hi soulless creaturas, imo monstra adventus vultus comedat cerebella viventium.",
             "images": [
-              "http://placehold.it/300x200",
-              "http://placehold.it/300x200"
+              "http://lorempixel.com/300/200/abstract/1",
+              "http://lorempixel.com/300/200/abstract/2",
+              "http://lorempixel.com/300/200/abstract/3"
             ]
         },
         {
@@ -38,17 +39,19 @@ var projects = {
             "dates": "2017",
             "descripton":"Creaturas, imo monstra adventus vultus comedat cerebella viventium.",
             "images": [
-              "http://placehold.it/300x200",
-              "http://placehold.it/300x200"
+              "http://lorempixel.com/300/200/animals/1",
+              "http://lorempixel.com/300/200/animals/2",
+              "http://lorempixel.com/300/200/animals/3"
             ]
         },
         {
-            "title": "Online Resume",
+            "title": "Technics",
             "dates": "2017",
             "descripton": "Imo monstra adventus vultus comedat cerebella viventium.",
             "images": [
-                "http://placehold.it/300x200",
-                "http://placehold.it/300x200"
+                "http://lorempixel.com/300/200/technics/6",
+                "http://lorempixel.com/300/200/technics/2",
+                "http://lorempixel.com/300/200/technics/4"
             ]
         }
     ]

@@ -16,6 +16,7 @@ h5,
 h6 {
 
   font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
 }
 
 
@@ -31,7 +32,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #fff;
   line-height: 48px;
   display: inline;
 }
@@ -39,7 +40,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #3a3042;
   line-height: 29px;
   padding: 10px;
 }
@@ -69,38 +70,39 @@ h5 {
 
 .date-text {
   font-style: italic;
-  font-size: 14px;
+  font-size: 16px;
   color: #999;
-  line-height: 16px;
+  line-height: 18px;
   float: left;
 }
 
 .location-text {
   font-style: italic;
-  font-size: 14px;
+  font-size: 16px;
   color: #999;
-  line-height: 16px;
+  line-height: 18px;
   float: right;
 
 }
 
 p {
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
-  line-height: 21px;
+  line-height: 23px;
 }
 
 a {
-  color: #1199c3;
+  color: #846193;
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 20px;
   display: block;
+  font-size: 18px;
 }
 
 .welcome-message {
   font-style: italic;
-  font-size: 18px;
-  color: #f3f3f3;
+  font-size: 20px;
+  color: #fff;
   line-height: 28px;
 }
 
@@ -134,7 +136,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #3a3042;
 }
 
 .flex-box {
