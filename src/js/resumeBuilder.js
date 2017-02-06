@@ -29,8 +29,9 @@ var projects = {
             "dates": "2017",
             "descripton":"Hi soulless creaturas, imo monstra adventus vultus comedat cerebella viventium.",
             "images": [
-              "http://placehold.it/300x200",
-              "http://placehold.it/300x200"
+              "http://lorempixel.com/300/200/abstract/1",
+              "http://lorempixel.com/300/200/abstract/2",
+              "http://lorempixel.com/300/200/abstract/3"
             ]
         },
         {
@@ -38,17 +39,19 @@ var projects = {
             "dates": "2017",
             "descripton":"Creaturas, imo monstra adventus vultus comedat cerebella viventium.",
             "images": [
-              "http://placehold.it/300x200",
-              "http://placehold.it/300x200"
+              "http://lorempixel.com/300/200/animals/1",
+              "http://lorempixel.com/300/200/animals/2",
+              "http://lorempixel.com/300/200/animals/3"
             ]
         },
         {
-            "title": "Online Resume",
+            "title": "Technics",
             "dates": "2017",
             "descripton": "Imo monstra adventus vultus comedat cerebella viventium.",
             "images": [
-                "http://placehold.it/300x200",
-                "http://placehold.it/300x200"
+                "http://lorempixel.com/300/200/technics/6",
+                "http://lorempixel.com/300/200/technics/2",
+                "http://lorempixel.com/300/200/technics/4"
             ]
         }
     ]
@@ -114,13 +117,13 @@ var education = {
     "onlineCourses": [{
             "title": "Front-End Developer Nanodegree",
             "school": "Udacity",
-            "dates": "2017",
+            "dates": "January 2017-Present",
             "url": "http://www.udacity.com"
         },
         {
             "title": "WordPress Developer Blueprint",
             "school": "Skillcrush",
-            "dates": "August 2016-September 2017",
+            "dates": "August 2016-September 2016",
             "url": "http://www.skillcrush.com"
         }
     ]
@@ -164,65 +167,134 @@ if (bio.skills.length > 0) {
     //Grab all skills and display them
     for (skill in bio.skills) {
         formattedHTMLskill = HTMLskills.replace("%data%", bio.skills[skill]);
-
         $("#skills").append(formattedHTMLskill);
     }
 }
 
 /* -- WORK EXPERIENCE -- */
-if (work.jobs.length > 0) {
-    //Add Work Experience
-    $("#workExperience").append(HTMLworkStart);
+work.display = function() {
+    if (work.jobs.length > 0) {
+        //Add Work Experience
+        $("#workExperience").append(HTMLworkStart);
 
-    //Grab all jobs and display them
+        //Grab all jobs and display them
 
-    for (job in work.jobs) {
-        var formattedHTMLworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+        for (var job = 0; job < work.jobs.length; job++) {
+            var formattedHTMLworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 
-        var formattedHTMLworkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+            var formattedHTMLworkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 
-        $(".work-entry:last").append(formattedHTMLworkEmployer + formattedHTMLworkTitle);
+            $(".work-entry:last").append(formattedHTMLworkEmployer + formattedHTMLworkTitle);
 
-        var formattedHTMLworkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-        $(".work-entry:last").append(formattedHTMLworkDates);
+            var formattedHTMLworkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+            $(".work-entry:last").append(formattedHTMLworkDates);
 
-        var formattedHTMLworkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-        $(".work-entry:last").append(formattedHTMLworkLocation);
+            var formattedHTMLworkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+            $(".work-entry:last").append(formattedHTMLworkLocation);
 
-        var formattedHTMLworkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-        $(".work-entry:last").append(formattedHTMLworkDescription);
+            var formattedHTMLworkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+            $(".work-entry:last").append(formattedHTMLworkDescription);
+        }
     }
-}
+};
+
+work.display();
 
 /* -- PROJECTS -- */
 
 //Encapsulate all projects into a function to display
 
 projects.display = function() {
-  for (project in projects.projects) {
-      $("#projects").append(HTMLprojectStart);
+    if (projects.projects.length > 0){
 
-      var formattedHTMLprojectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-      $(".project-entry:last").append(formattedHTMLprojectTitle);
+      for (var project = 0; project < projects.projects.length; project++) {
+          $("#projects").append(HTMLprojectStart);
 
-      var formattedHTMLprojectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-      $(".project-entry:last").append(formattedHTMLprojectDates);
+          var formattedHTMLprojectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+          $(".project-entry:last").append(formattedHTMLprojectTitle);
 
-      var formattedHTMLprojectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].descripton);
-      $(".project-entry:last").append(formattedHTMLprojectDescription);
+          var formattedHTMLprojectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+          $(".project-entry:last").append(formattedHTMLprojectDates);
+
+          var formattedHTMLprojectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].descripton);
+          $(".project-entry:last").append(formattedHTMLprojectDescription);
 
 
-      //Display all images within the array for this project
-      if(projects.projects[project].images.length >0) {
-        for (image in projects.projects[project].images){
-          var formattedHTMLprojectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-          $(".project-entry:last").append(formattedHTMLprojectImage);
+          //Display all images within the array for this project
+          if(projects.projects[project].images.length >0) {
+            for (image in projects.projects[project].images){
+              var formattedHTMLprojectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+              $(".project-entry:last").append(formattedHTMLprojectImage);
+            }
+          }
         }
-      }
     }
-}
+};
 
 projects.display();
 
+/* -- EDUCATION -- */
+
+education.display = function() {
+    if (education.schools.length > 0) {
+        //Add School Education
+        $("#education").append(HTMLschoolStart);
+
+        //Grab all schools and display them
+        for (var school = 0; school < education.schools.length; school++) {
+            var formattedHTMLschoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+
+            var formattedHTMLschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+
+            $(".education-entry:last").append(formattedHTMLschoolName + formattedHTMLschoolDegree);
+
+            var formattedHTMLschoolDates = HTMLworkDates.replace("%data%", education.schools[school].dates);
+            $(".education-entry:last").append(formattedHTMLschoolDates);
+
+            var formattedHTMLschoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+            $(".education-entry:last").append(formattedHTMLschoolLocation);
+
+            //Display all majors within the array for this school
+            if(education.schools[school].major.length > 0) {
+              for (var major = 0; major < education.schools[school].major.length; major++){
+                  var formattedHTMLschoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major[major]);
+                  $(".education-entry:last").append(formattedHTMLschoolMajor);
+              }
+          }
+        }
+    }
+
+
+    //Add Online Education
+    if (education.onlineCourses.length > 0) {
+        //Add Education
+        $(".education-entry:last").append(HTMLonlineClasses);
+
+        for(var onlineCourse = 0; onlineCourse < education.onlineCourses.length; onlineCourse++) {
+
+            var formattedHTMLonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
+
+            var formattedHTMLonlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
+
+            //Display online course title with school
+            $(".education-entry:last").append(formattedHTMLonlineTitle + formattedHTMLonlineSchool);
+
+            var formattedHTMLonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].dates);
+
+            $(".education-entry:last").append(formattedHTMLonlineDates);
+        }
+
+    }
+};
+
+education.display();
+
 /* -- Google Map of Work Locations */
 $("#mapDiv").append(googleMap);
+
+/* -- LET'S CONNECT (FOOTER) -- */
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+
+$("#lets-connect").append(formattedTwitter);
+$("#lets-connect").append(formattedGithub);
