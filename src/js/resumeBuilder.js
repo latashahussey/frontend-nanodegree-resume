@@ -60,7 +60,7 @@ var projects = {
 var bio = {
     "name": "LaTasha Hussey",
     "role": "Front-End Web Developer",
-    "welcomeMessage": "Hi, I am a front-end web developer.",
+    "welcomeMessage": "Welcome to my online resume project.",
     "biopic": "../dist/images/tasha-tilt-small.jpg",
     "contacts": {
         "mobile": "713-487-7391",
@@ -149,14 +149,21 @@ var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
 var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 
+
+
+
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
-$("#header").prepend(formattedBioPic);
-$("#header").append(formattedMobile);
-$("#header").append(formattedEmail);
+$("#header").append(formattedBioPic);
+$("#topContacts").append(formattedMobile);
+$("#topContacts").append(formattedEmail);
+$("#topContacts").append(formattedTwitter);
+$("#topContacts").append(formattedGithub);
 $("#header").append(formattedWelcomeMsg);
 
 /*Skills*/
@@ -165,7 +172,7 @@ if (bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);
 
     //Grab all skills and display them
-    for (skill in bio.skills) {
+    for (var skill = 0; skill < bio.skills.length; skill++) {
         formattedHTMLskill = HTMLskills.replace("%data%", bio.skills[skill]);
         $("#skills").append(formattedHTMLskill);
     }
@@ -237,11 +244,13 @@ projects.display();
 
 education.display = function() {
     if (education.schools.length > 0) {
-        //Add School Education
-        $("#education").append(HTMLschoolStart);
+
 
         //Grab all schools and display them
         for (var school = 0; school < education.schools.length; school++) {
+            //Add School Education
+            $("#education").append(HTMLschoolStart);
+
             var formattedHTMLschoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
 
             var formattedHTMLschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
@@ -271,6 +280,8 @@ education.display = function() {
         $(".education-entry:last").append(HTMLonlineClasses);
 
         for(var onlineCourse = 0; onlineCourse < education.onlineCourses.length; onlineCourse++) {
+            //Add School Education
+            $("#education").append(HTMLschoolStart);
 
             var formattedHTMLonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
 
@@ -293,8 +304,12 @@ education.display();
 $("#mapDiv").append(googleMap);
 
 /* -- LET'S CONNECT (FOOTER) -- */
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 
-$("#lets-connect").append(formattedTwitter);
-$("#lets-connect").append(formattedGithub);
+$("#footerContacts").append(formattedMobile);
+$("#footerContacts").append(formattedEmail);
+$("#footerContacts").append(formattedTwitter);
+$("#footerContacts").append(formattedGithub);
