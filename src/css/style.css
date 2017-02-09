@@ -3,22 +3,10 @@ div,
 ul,
 li,
 p {
-  padding: 0;
-  margin: 0;
   font-family: "Questrial", sans-serif;
+  margin:0;
+  padding: 0;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-
-  font-family: "Oswald", sans-serif;
-  text-transform: uppercase;
-}
-
 
 .clear-fix {
   overflow: auto;
@@ -31,21 +19,27 @@ h6 {
 }
 
 h1 {
-  font-size: 40px;
   color: #fff;
-  line-height: 48px;
   display: inline;
+  font-family: "Oswald", sans-serif;
+  font-size: 40px;
+  line-height: 48px;
+  text-transform: uppercase;
 }
 
 h2 {
-  font-weight: bold;
-  font-size: 24px;
   color: #3a3042;
+  font-family: "Oswald", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
   line-height: 29px;
-  padding: 10px;
+  padding: 10px 5%;
+  text-transform: uppercase;
 }
 
 h3 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
   font-style: italic;
   font-size: 20px;
   color: #000;
@@ -53,50 +47,49 @@ h3 {
 }
 
 h4 {
-  font-weight: bold;
-  font-size: 14px;
   color: #4a4a4a;
+  font-family: "Oswald", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
   line-height: 17px;
+  padding: 10px 5%;
+  text-transform: uppercase;
 }
 
-h2,
-h3,
-h4,
 h5 {
+  font-family: "Oswald", sans-serif;
   padding: 10px 5%;
-
+  text-transform: uppercase;
 }
 
 .date-text {
-  font-style: italic;
-  font-size: 16px;
   color: #999;
-  line-height: 18px;
   float: left;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 18px;
 }
 
 .location-text {
-  font-style: italic;
-  font-size: 16px;
   color: #999;
-  line-height: 18px;
   float: right;
-
+  font-size: 16px;
+  font-style: italic;
+  line-height: 18px;
 }
 
 p {
-  font-size: 16px;
   color: #333;
+  font-size: 16px;
   line-height: 23px;
 }
 
 a {
   color: #846193;
-  text-decoration: none;
-  margin-top: 20px;
   display: block;
   font-size: 18px;
-  padding-top: 10px;
+  margin-top: 20px;
+  text-decoration: none;
 }
 
 /* HEADER */
@@ -106,10 +99,10 @@ a {
 }
 
 .header-role {
-    color: #f5ae23;
-    margin-bottom: 3px;
-    margin-top: 3px;
-    text-transform: capitalize;
+  color: #f5ae23;
+  margin-bottom: 3px;
+  margin-top: 3px;
+  text-transform: capitalize;
 }
 
 .welcome-message {
@@ -137,15 +130,15 @@ a {
 }
 
 .white-text {
-  font-weight: bold;
   color: #fff;
+  font-weight: bold;
 }
 
 .gray {
   background-color: #f3f3f3;
-  padding-bottom: 10px;
   clear: both;
   overflow: auto;
+  padding-bottom: 10px;
 }
 
 .dark-gray {
@@ -173,7 +166,7 @@ a {
 }
 
 li {
- display: inline-flex;
+  display: inline-flex;
   list-style-type: none;
   padding: 5px;
 }
